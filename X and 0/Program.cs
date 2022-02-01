@@ -27,6 +27,15 @@ namespace X_and_0
                 Console.Write("Horizontal coordinate: ");
                 bool horizontal = int.TryParse(Console.ReadLine(), out int hzt);
 
+                //int min = 0;
+                //int max = 2;
+
+                //if (vrt < min || vrt > max && hzt < min || hzt > max)
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Red;
+                //    Console.WriteLine("ERROR");
+                //    Console.ResetColor();
+                //}
 
                 if (vertical == true && horizontal == true)
                 {
@@ -48,11 +57,31 @@ namespace X_and_0
                         Console.WriteLine();
                     }
                 }
+                else 
+                {
+                    if (vertical == false || horizontal == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("ERROR");
+                        Console.ResetColor();
+                    }
+                }
+
                 Console.Write("Vertical coordinate: ");
                 bool vertical2 = int.TryParse(Console.ReadLine(), out int vrt2);
 
                 Console.Write("Horizontal coordinate: ");
                 bool horizontal2 = int.TryParse(Console.ReadLine(), out int hzt2);
+
+                //int min2 = 0;
+                //int max2 = 2;
+
+                //if (vrt2 < min2 || vrt2 > max2 || hzt2 < min2 || hzt2 > max2)
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Red;
+                //    Console.WriteLine("Error");
+                //    Console.ResetColor();                   
+                //}
 
                 if (vertical2 == true && horizontal2 == true)
                 {
@@ -77,44 +106,16 @@ namespace X_and_0
                         Console.WriteLine();
                     }
                 }
-
                 else
                 {
-                    Console.WriteLine("ERROR");
-
-                //    bool inputIsNumber = false;
-                //    int number = 0;
-
-                //    do
-                //    {
-                //        string question;
-                //        Console.Write(question);
-                //        string input = Console.ReadLine();
-                //        inputIsNumber = int.TryParse(input, out number);
-
-                //        if (!inputIsNumber)
-                //        {
-                //            Console.ForegroundColor = ConsoleColor.Red;
-                //            Console.WriteLine("Input is not a number! Plese try again!");
-                //            Console.ResetColor();
-                //        }
-
-                //        if (inputIsNumber)
-                //        {
-                //            Console.ForegroundColor = ConsoleColor.Red;
-                //            Console.WriteLine("Input is out of bounds! Plese try again!");
-                //            Console.ResetColor();
-                //            inputIsNumber = false;
-                //        }
-                //    }
-                //    while (!inputIsNumber);
-
-                //    return number;
-                //}
-                
+                    if( vertical2 == false || horizontal2 == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("ERROR");
+                        Console.ResetColor();
+                    }
                 }
-            }
-            
+            }           
         }
         static bool Has0(int[,] qwe)
         {

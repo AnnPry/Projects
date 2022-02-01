@@ -12,7 +12,7 @@ namespace calculator
                 Console.WriteLine("Press M to change the number to modul");
 
                 if (Console.ReadKey().Key == ConsoleKey.M)
-                {
+                {                    
                     Console.ReadLine();
 
                     Console.Write("Number: ");
@@ -33,6 +33,10 @@ namespace calculator
                         Console.WriteLine("Error");
                         Console.ResetColor();
                     }
+                }
+                else
+                {
+                    Console.Clear();
                 }
                 Console.ResetColor();
 
@@ -59,6 +63,10 @@ namespace calculator
                         Console.WriteLine("Error");
                         Console.ResetColor();      
                     }
+                }
+                else
+                {
+                    Console.Clear();
                 }
                 Console.ResetColor();
 
