@@ -10,6 +10,11 @@ namespace calculator
             {
                 GetOperationFromUser();
                 string oper = Console.ReadLine();
+                
+                //if(oper == "m" || oper == "d")
+                //{
+
+                //}
 
                 double n1 = GetDoubleFromUser("Number 1: ");
                 
@@ -208,23 +213,41 @@ namespace calculator
         {
             Console.Write("Operation: ");
 
-            if (Console.ReadKey().Key == ConsoleKey.M)
+            switch (Console.ReadKey().Key)
             {
-                Console.ReadLine();
+                case ConsoleKey.M:
+                    Console.ReadLine();
 
-                double n = GetDoubleFromUser("Number: ");
+                    double n = GetDoubleFromUser("Number: ");
 
-                if (n < 0 || n >= 0)
-                {
-                    Console.WriteLine($"|{Math.Abs(n)}|");
+                    if (n < 0 || n >= 0)
+                    {
+                        Console.WriteLine($"|{Math.Abs(n)}|");
 
-                }
-                else
-                {
-                    RedErrorString();
-                }
+                    }
+                    else
+                    {
+                        RedErrorString();
+                    }
+                    break;
+                case ConsoleKey.D:
+                    Console.ReadLine();
+
+                    double n1 = GetDoubleFromUser("Number: ");
+
+                    Console.Write("Degree of number: ");
+                    bool num2 = int.TryParse(Console.ReadLine(), out int n2);
+
+                    Console.WriteLine($"Result: {Math.Pow(n1, n2)}");
+
+                    if (num2 == false)
+                    {
+                        RedErrorString();
+                    }
+                    break;
             }
         }
+        
         static void RedErrorString()
         {
             Console.ForegroundColor = ConsoleColor.Red;
