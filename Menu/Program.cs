@@ -18,11 +18,12 @@ namespace Menu
 
             Console.WriteLine();
 
-            int number = GetNumberOfUser();
+            int number = GetNumberFromUser();
             Console.WriteLine(number);
         }
         static string GetUserName()
         {
+            string nam = "";
             string name;
             do
             {
@@ -47,10 +48,10 @@ namespace Menu
             }
             while (true);
 
-            return name;
+            return nam;
         }
 
-        static int GetNumberOfUser()
+        static int GetNumberFromUser()
         {
             int n = 0;
             do
