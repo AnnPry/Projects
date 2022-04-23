@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "30 Methods", "30 Methods\30
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tic Tac Toe", "Tic Tac Toe\Tic Tac Toe.csproj", "{7D4B660D-0412-4C65-94BF-9DE1E0F6229C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator", "calculator\calculator.csproj", "{42B7AC81-BCC5-4518-9528-2EDEC1AD28A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "calculator", "calculator\calculator.csproj", "{42B7AC81-BCC5-4518-9528-2EDEC1AD28A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", "{7EB42F67-6416-4B07-9F10-3C33AC825C07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{42B7AC81-BCC5-4518-9528-2EDEC1AD28A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42B7AC81-BCC5-4518-9528-2EDEC1AD28A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42B7AC81-BCC5-4518-9528-2EDEC1AD28A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB42F67-6416-4B07-9F10-3C33AC825C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB42F67-6416-4B07-9F10-3C33AC825C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB42F67-6416-4B07-9F10-3C33AC825C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB42F67-6416-4B07-9F10-3C33AC825C07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
