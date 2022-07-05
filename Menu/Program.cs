@@ -15,7 +15,7 @@ namespace Menu
             Console.WriteLine("2. Contacts");
             Console.WriteLine("3. Settings");
             Console.WriteLine("4. Array");           
-
+            
             Console.WriteLine();
 
             int number = GetNumberOfMenu();
@@ -154,7 +154,7 @@ namespace Menu
                 if (Console.ReadKey().Key == ConsoleKey.Y)
                 {
                     Console.ReadLine();
-                    TransferArrayCell(Array);
+                    GetCoordinatesFromUser(Array);
                 }
             }
         }
@@ -186,10 +186,36 @@ namespace Menu
             }
             return num;
         }
-        static void TransferArrayCell(int[,] array)
+        static void TransferArrayCell(int[,] array, int i1, int k1, int i2, int k2)
         {
-            (array[0, 0], array[1, 1]) = (array[1, 1], array[0, 0]);
+            if(IsNeighbours(i1, k1, i2, k2) == true)
+            {
+                (array[i1, k1], array[i2, k2]) = (array[i2, k2], array[i1, k1]);
+            }
+            else //if(IsNeighbours(i1, k1, i2, k2) == false)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error");
+                Console.ResetColor();
+            }        
+        }
+        static void GetCoordinatesFromUser(int[,] array)
+        {         
+            int arrayMaxI = array.GetLength(0) - 1;
+            int arrayMaxK = array.GetLength(1) - 1;
 
+            int i1 = GetNumberFromUser("Enter i1: ", 0, arrayMaxI);
+            int k1 = GetNumberFromUser("Enter k1: ", 0, arrayMaxK);
+
+            int i2 = GetNumberFromUser("Enter i2: ", 0, arrayMaxI);
+            int k2 = GetNumberFromUser("Enter k2: ", 0, arrayMaxK);
+            
+            TransferArrayCell(array, i1, k1, i2, k2);
+            DisplayArray(array);
+            Console.ReadLine();
+        }
+        static void DisplayArray(int[,] array)
+        {
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int k = 0; k < array.GetLength(1); k++)
@@ -197,8 +223,18 @@ namespace Menu
                     Console.Write(array[i, k] + "; ");
                 }
                 Console.WriteLine();
+            }          
+        }
+        static bool IsNeighbours(int i1, int k1, int i2, int k2)
+        {
+            if(i1 == i2 && Math.Abs(k1 - k2) <= 1 || k1 == k2 && Math.Abs(i1 - i2) <= 1)
+            {
+                return true;
             }
-            Console.ReadLine();
+            else
+            {
+                return false;
+            }
         }
     }
 }
