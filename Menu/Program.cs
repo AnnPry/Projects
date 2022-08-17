@@ -14,8 +14,8 @@ namespace Menu
             Console.WriteLine("1. Profile");
             Console.WriteLine("2. Contacts");
             Console.WriteLine("3. Settings");
-            Console.WriteLine("4. Array");           
-            
+            Console.WriteLine("4. Array");
+
             Console.WriteLine();
 
             int number = GetNumberOfMenu();
@@ -38,7 +38,7 @@ namespace Menu
                     Console.Clear();
                     break;
                 }
-                else 
+                else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error");
@@ -64,7 +64,7 @@ namespace Menu
                 if (number == true && num == 1)
                 {
                     Console.Clear();
-                    YourLocation("Profile"); 
+                    YourLocation("Profile");
                     ComeBack();
                     break;
                 }
@@ -128,8 +128,8 @@ namespace Menu
         }
         static void Array()
         {
-            int height = GetNumberFromUser("Enter height of array: ", 1,100);
-            int width = GetNumberFromUser("Enter width of array: ", 1,100);
+            int height = GetNumberFromUser("Enter height of array: ", 1, 100);// 2) change 1 to 3, and delete string 150?
+            int width = GetNumberFromUser("Enter width of array: ", 1, 100);
 
             int[,] Array = new int[height, width];
             Console.WriteLine();
@@ -140,14 +140,14 @@ namespace Menu
             {
                 for (int k = 0; k < Array.GetLength(1); k++)
                 {
-                    Array[i, k] = r.Next(0, 101);
+                    Array[i, k] = r.Next(1, 6);//1) change value 101 
                     Console.Write(Array[i, k] + "; ");
                 }
                 Console.WriteLine();
             }
             Console.ReadLine();
 
-            if (height > 1 && width > 1)
+            if (height > 1 && width > 1)//2)
             {
                 Console.WriteLine("Do you want to swap values in array? ");
 
@@ -188,7 +188,7 @@ namespace Menu
         }
         static void TransferArrayCell(int[,] array, int i1, int k1, int i2, int k2)
         {
-            if(IsNeighbours(i1, k1, i2, k2) == true)
+            if (IsNeighbours(i1, k1, i2, k2) == true)
             {
                 (array[i1, k1], array[i2, k2]) = (array[i2, k2], array[i1, k1]);
             }
@@ -197,10 +197,10 @@ namespace Menu
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Error");
                 Console.ResetColor();
-            }        
+            }
         }
         static void GetCoordinatesFromUser(int[,] array)
-        {         
+        {
             int arrayMaxI = array.GetLength(0) - 1;
             int arrayMaxK = array.GetLength(1) - 1;
 
@@ -209,8 +209,10 @@ namespace Menu
 
             int i2 = GetNumberFromUser("Enter i2: ", 0, arrayMaxI);
             int k2 = GetNumberFromUser("Enter k2: ", 0, arrayMaxK);
-            
+
             TransferArrayCell(array, i1, k1, i2, k2);
+            ThreeInARow(array);
+            ThreeInAColumn(array);
             DisplayArray(array);
             Console.ReadLine();
         }
@@ -223,17 +225,75 @@ namespace Menu
                     Console.Write(array[i, k] + "; ");
                 }
                 Console.WriteLine();
-            }          
+            }
         }
         static bool IsNeighbours(int i1, int k1, int i2, int k2)
         {
-            if(i1 == i2 && Math.Abs(k1 - k2) <= 1 || k1 == k2 && Math.Abs(i1 - i2) <= 1)
+            if (i1 == i2 && Math.Abs(k1 - k2) <= 1 || k1 == k2 && Math.Abs(i1 - i2) <= 1)
             {
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+        static void ThreeInARow(int[,] array)
+        {
+            int counter = 1;
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    if (k == 0)
+                    {
+                        continue;
+                    }
+                    if (array[i, k - 1] == array[i, k])
+                    {
+                        counter++;
+                        if (counter == 3)
+                        {
+                            array[i, k] = 0;
+                            array[i, k - 1] = 0;
+                            array[i, k - 2] = 0;
+                        }
+                    }
+                    else
+                    {
+                        counter = 1;
+                    }
+                }
+            }
+        }
+        static void ThreeInAColumn(int[,] array)
+        {
+            int counter = 1;
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    if (i == 0)
+                    {
+                        continue;
+                    }
+                    if (array[i - 1, k] == array[i, k])
+                    {
+                        counter++;
+                        if (counter == 3)
+                        {
+                            array[i, k] = 0;
+                            array[i - 1, k] = 0;
+                            array[i - 2, k] = 0;
+                        }
+                    }
+                    else
+                    {
+                        counter = 1;
+                    }
+                }
             }
         }
     }
