@@ -8,25 +8,16 @@ namespace Laptop
         static void Main(string[] args)
         {          
             var arr = new Keyboard("q","w","e");
-            Console.WriteLine($"List: {arr}");
+            Console.WriteLine($"Array: {arr}");
 
             arr.AddElements("a", "z", "m");
-            Console.WriteLine($"Add list elements: {arr}");
+            Console.WriteLine($"Add elements: {arr}");
 
             arr.AddElement("k");
-            Console.WriteLine($"Add list element: {arr}");
+            Console.WriteLine($"Add element: {arr}");
 
-            //list.RemoveListElement("w");
-            Console.WriteLine($"Remove list element: {arr.RemoveElement("w")}");
-
-            //Keyboard butt = new Keyboard("k", "e", "y", "q", "w");
-            //Console.WriteLine(butt);
-
-            //butt.AddElement("qwa");
-            //Console.WriteLine($"Add element:{string.Join(", ", butt.Buttons)}");
-
-            //butt.RemoveElement("y");
-            //Console.WriteLine($"Remove element:{string.Join(", ", butt.Buttons)}");
+            arr.RemoveElement("w");
+            Console.WriteLine($"Remove element: {arr}");         
          
             var list = new Keyboard2("q", "w", "e");
             Console.WriteLine($"List: {list}");
@@ -37,9 +28,29 @@ namespace Laptop
             list.AddListElement("k");
             Console.WriteLine($"Add list element: {list}");
 
-            //list.RemoveListElement("w");
-            Console.WriteLine($"Remove list element: {list.RemoveListElement("w")}");
+            list.RemoveListElement("w");
+            Console.WriteLine($"Remove list element: {list}");
 
+            var dicti = new KeyboardDictionary("q", "w", "e","5");
+            Console.WriteLine($"Dictionary: {dicti}");
+
+            dicti.AddElements("?", "!", "/");
+            Console.WriteLine($"Add dictionary elements: {dicti}");
+
+            dicti.AddElement("Esc");
+            Console.WriteLine($"Add dictionary element: {dicti}");
+
+            dicti.RemoveElement("5");
+            Console.WriteLine($"Remove dictionary element: {dicti}");
+
+            //Keyboard butt = new Keyboard("k", "e", "y", "q", "w");
+            //Console.WriteLine(butt);
+
+            //butt.AddElement("qwa");
+            //Console.WriteLine($"Add element:{string.Join(", ", butt.Buttons)}");
+
+            //butt.RemoveElement("y");
+            //Console.WriteLine($"Remove element:{string.Join(", ", butt.Buttons)}");
 
             //Keyboard2 butt2 = new Keyboard2();        
             //Console.WriteLine(butt2);

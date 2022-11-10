@@ -26,7 +26,7 @@ namespace Laptop
         }
         public override string ToString()
         {
-            return $"Keyboard buttons: {string.Join(", ", Buttons2)}";
+            return $"{string.Join(", ", Buttons2)}";
         }
     }
 }
