@@ -24,14 +24,14 @@ namespace Laptop
             {
                 ButtonGroups["Special"].Add(butt);
             }
-            else if(butt.Length == 1)
+            else if(butt.Length == 1 && int.TryParse(butt, out int i) == false)
             {
-                ButtonGroups["Number"].Add(butt);
+                ButtonGroups["Symbol"].Add(butt);
             }
             else
             {
-                ButtonGroups["Symbol"].Add(butt);
-            }           
+                ButtonGroups["Number"].Add(butt);
+            }
 
             // if butt > 1 letter => Special (Esc, Enter, Ctrl, etc.)
             // if butt = 1 letter & is number => Number
@@ -39,18 +39,21 @@ namespace Laptop
         }
         public void AddElements(params string[] butts)
         {
-            if (butts.Length > 3)
+            for (int i = 0; i < butts.Length; i++)
             {
-                ButtonGroups["Special"].AddRange(butts);
+                if (butts[i].Length > 1)
+                {
+                    ButtonGroups["Special"].Add(butts[i]);
+                }
+                else if (butts[i].Length == 1 && int.TryParse(butts[i], out int j) == false)
+                {
+                    ButtonGroups["Symbol"].Add(butts[i]);
+                }
+                else
+                {
+                    ButtonGroups["Number"].Add(butts[i]);
+                }
             }
-            else if (butts.Length == 1)
-            {
-                ButtonGroups["Number"].AddRange(butts);
-            }
-            else
-            {
-                ButtonGroups["Symbol"].AddRange(butts);
-            }           
         }
         public bool RemoveElement(string butt)
         {
@@ -58,13 +61,13 @@ namespace Laptop
             {
                 return ButtonGroups["Special"].Remove(butt);
             }
-            else if (butt.Length == 1)
-            {
-                return ButtonGroups["Number"].Remove(butt);
-            }
-            else
+            else if (butt.Length == 1 && int.TryParse(butt, out int i) == false)
             {
                 return ButtonGroups["Symbol"].Remove(butt);
+            } 
+            else
+            {
+                return ButtonGroups["Number"].Remove(butt);
             }
             //return false;                      
         }
