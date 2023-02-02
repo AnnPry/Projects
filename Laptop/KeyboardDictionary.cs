@@ -39,20 +39,9 @@ namespace Laptop
         }
         public void AddElements(params string[] butts)
         {
-            for (int i = 0; i < butts.Length; i++)
+            foreach (var i in butts)
             {
-                if (butts[i].Length > 1)
-                {
-                    ButtonGroups["Special"].Add(butts[i]);
-                }
-                else if (butts[i].Length == 1 && int.TryParse(butts[i], out int j) == false)
-                {
-                    ButtonGroups["Symbol"].Add(butts[i]);
-                }
-                else
-                {
-                    ButtonGroups["Number"].Add(butts[i]);
-                }
+                AddElement(i);
             }
         }
         public bool RemoveElement(string butt)

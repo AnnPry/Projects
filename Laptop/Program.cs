@@ -34,7 +34,7 @@ namespace Laptop
             var dicti = new KeyboardDictionary("q", "w", "e","5");
             Console.WriteLine($"Dictionary: {dicti}");
 
-            dicti.AddElements("1", "f", "{");
+            dicti.AddElements("1", "f", "{", "6");
             Console.WriteLine($"Add dictionary elements: {dicti}");
 
             dicti.AddElement("[");
