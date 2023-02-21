@@ -1,31 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace ArrayHomework_Repetition_
+namespace ListHomework_Repetition_
 {
     class Program
     {
         static void Main(string[] args)
-        {          
+        {
             int num = NumberOrNot();
-                       
-            string[] array = new string[num];
-            GetElements(array);
-            PrintArray(array);
-          
-            static void GetElements(string[] array)
+
+            List<string> list = new List<string>();
+           
+            GetElements(list, num);
+            PrintArray(list);
+
+            static void GetElements(List<string> list, int num)
             {
                 var elem = "";
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    Console.Write("Array element: ");
+                    Console.Write("List element: ");
                     elem = Console.ReadLine();
                     Console.WriteLine($"Element length = {elem.Length}");
-                    array[i] = elem;                   
-                }             
+                    list.Add(elem);
+                }
             }
-            static void PrintArray(string[] array)
+            static void PrintArray(List<string> list)
             {
-                Console.WriteLine(string.Join(", ", array));
+                Console.WriteLine(string.Join(", ", list));
             }
             static int NumberOrNot()
             {
@@ -34,10 +36,10 @@ namespace ArrayHomework_Repetition_
 
                 while (!qwe)
                 {
-                    Console.Write("Array length: ");
+                    Console.Write("List length: ");
                     string input = Console.ReadLine();
                     qwe = int.TryParse(input, out number);
-                   
+
                     if (!qwe)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -47,7 +49,6 @@ namespace ArrayHomework_Repetition_
                 }
                 return number;
             }
-            
         }
     }
 }
