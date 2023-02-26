@@ -9,15 +9,14 @@ namespace ListHomework_Repetition_
         {
             int num = NumberOrNot();
 
-            List<string> list = new List<string>();
-           
-            GetElements(list, num);
+            List<string> list = new List<string>(num);          
+            GetElements(list);
             PrintArray(list);
 
-            static void GetElements(List<string> list, int num)
+            static void GetElements(List<string> list)
             {
                 var elem = "";
-                for (int i = 0; i < num; i++)
+                for (int i = 0; i < list.Capacity; i++)
                 {
                     Console.Write("List element: ");
                     elem = Console.ReadLine();
@@ -43,7 +42,7 @@ namespace ListHomework_Repetition_
                     if (!qwe)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Input isn't a number! Plese try again!");
+                        Console.WriteLine("Input isn't a number! Please try again!");
                         Console.ResetColor();
                     }
                 }

@@ -41,7 +41,7 @@ namespace ArrayHomework_Repetition_
                     if (!qwe)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Input isn't a number! Plese try again!");
+                        Console.WriteLine("Input isn't a number! Please try again!");
                         Console.ResetColor();
                     }
                 }

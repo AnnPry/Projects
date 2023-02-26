@@ -145,14 +145,14 @@ namespace Tic_Tac_Toe
                 if (!inputIsNumber)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Input is not a number! Plese try again!");
+                    Console.WriteLine("Input is not a number! Please try again!");
                     Console.ResetColor();
                 }
 
                 if (inputIsNumber && (number < min || number > max))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Input is out of bounds! Plese try again!");
+                    Console.WriteLine("Input is out of bounds! Please try again!");
                     Console.ResetColor();
                     inputIsNumber = false;
                 }
