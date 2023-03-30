@@ -56,7 +56,7 @@ namespace LinqHomework
 
             var random = new Random();
             var users = new List<User>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 users.Add(new User
                 {
@@ -68,13 +68,33 @@ namespace LinqHomework
             }
             users.Display();
             Separator();
+            var qwe = users.GroupBy(x => x.Country)
+                 .OrderByDescending(x => x.Count())               
+                 .Select(x => new { Country = x.Key, Members = x.Count(), Employees = x}).First();
+            Console.WriteLine($"Country: {qwe.Country}, Members: {qwe.Members}, Employees:  ");
+            qwe.Employees.Display();
+
+            //Console.WriteLine(qwe);
+            //foreach (var item in qwe.Employees)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //var first = users.First(); //First не потрібно нічого перетворювати, бере об'єкти
+            //var take = users.Take(1).ToList(); //лист перетворює данні на об'єкти, без нього це люди з анкетами)
+
+
             //users.GroupBy(x => x.Country)
             //     .OrderByDescending(x => x.Count())
             //     .Take(1)                
             //     .Display();
-           
-            
 
+            ////Employees = x.Select(p => p)
+
+            //employee.OrderBy(x => x.FirstName)
+            //      .ThenBy(x => x.LastName)
+            //      .ThenBy(x => x.Age)
+            //      .Display();
         }
     }
 }
