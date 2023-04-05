@@ -68,11 +68,16 @@ namespace LinqHomework
             }
             users.Display();
             Separator();
-            var qwe = users.GroupBy(x => x.Country)
+            var top2 = users.GroupBy(x => x.Country)
                  .OrderByDescending(x => x.Count())               
-                 .Select(x => new { Country = x.Key, Members = x.Count(), Employees = x}).First();
-            Console.WriteLine($"Country: {qwe.Country}, Members: {qwe.Members}, Employees:  ");
-            qwe.Employees.Display();
+                 .Select(x => new CountryStatisticDto{ Country = x.Key, Members = x.Count(), Employees = x.ToList()})
+                 .Take(2).ToList();
+            foreach (var item in top2)
+            {
+                Console.WriteLine(item);
+               
+            }
+            
 
             //Console.WriteLine(qwe);
             //foreach (var item in qwe.Employees)
