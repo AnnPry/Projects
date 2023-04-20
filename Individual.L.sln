@@ -29,13 +29,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laptop", "Laptop\Laptop.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayHomework(Repetition)", "ArrayHomework(Repetition)\ArrayHomework(Repetition).csproj", "{AD8B123B-01D9-4E84-ACC9-B1F1DF2C6001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListHomework(Repetition)", "ListHomework(Repetition)\ListHomework(Repetition).csproj", "{42CF01BB-BDC5-427A-9BC6-179421AB7465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListHomework(Repetition)", "ListHomework(Repetition)\ListHomework(Repetition).csproj", "{42CF01BB-BDC5-427A-9BC6-179421AB7465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravlyk", "Ravlyk\Ravlyk.csproj", "{DA0A3ACD-AFDC-45A0-BE3F-C6D4D18E800E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ravlyk", "Ravlyk\Ravlyk.csproj", "{DA0A3ACD-AFDC-45A0-BE3F-C6D4D18E800E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post office", "Post office\Post office.csproj", "{E3BD7C56-D6F2-4FFC-B2CD-0AB8445E0767}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post office", "Post office\Post office.csproj", "{E3BD7C56-D6F2-4FFC-B2CD-0AB8445E0767}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqHomework", "LinqHomework\LinqHomework.csproj", "{FFF52210-120B-45A2-B8A6-F52946703666}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqHomework", "LinqHomework\LinqHomework.csproj", "{FFF52210-120B-45A2-B8A6-F52946703666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Theater", "Theater\Theater.csproj", "{EBF9CEE8-428E-4790-8E7D-35406F54C2D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{FFF52210-120B-45A2-B8A6-F52946703666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF52210-120B-45A2-B8A6-F52946703666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF52210-120B-45A2-B8A6-F52946703666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF9CEE8-428E-4790-8E7D-35406F54C2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF9CEE8-428E-4790-8E7D-35406F54C2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF9CEE8-428E-4790-8E7D-35406F54C2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF9CEE8-428E-4790-8E7D-35406F54C2D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

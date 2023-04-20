@@ -74,8 +74,7 @@ namespace LinqHomework
                  .Take(2).ToList();
             foreach (var item in top2)
             {
-                Console.WriteLine(item);
-               
+                Console.WriteLine(item);               
             }
             
 
