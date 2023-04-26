@@ -8,5 +8,7 @@ namespace Theater
 {
     class Performance
     {
+        public string Name { get; set; }
+        public Hall Hall { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Theater
 {
     class Hall
     {
-
+        public int Number { get; set; }
     }
 }

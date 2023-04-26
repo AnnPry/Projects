@@ -8,5 +8,9 @@ namespace Theater
 {
     class Price
     {
+        public int Number { get; set; }
+        public Row Row { get; set; }
+        public Place Place { get; set; }
+        public Performance Performance { get; set; }
     }
 }

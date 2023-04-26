@@ -8,9 +8,9 @@ namespace Theater
 {
     class Ticket
     {
-        public int Number { get; set; }        
-        
+        public int Number { get; set; }              
         public Place Place { get; set; }
-        public Hall Hall { get; set; }
+        public Row Row { get; set; }
+        public Price Price { get; set; }
     }
 }

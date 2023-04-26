@@ -8,5 +8,7 @@ namespace Theater
 {
     class Row
     {
+        public int Number { get; set; }
+        public Hall Hall { get; set; }
     }
 }
