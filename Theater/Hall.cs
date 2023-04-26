@@ -9,5 +9,7 @@ namespace Theater
     class Hall
     {
         public int Number { get; set; }
+        public List<Performance> Performances { get; set; }
+        public List<Row> Rows { get; set; }
     }
 }
