@@ -12,5 +12,10 @@ namespace Theater
         public Performance Performance { get; set; }
         public Row Row { get; set; }
         public Price Price { get; set; }
+        public Place(int number)
+        {
+            Number = number;
+
+        }
     }
 }
