@@ -34,7 +34,7 @@ namespace Theater
                     qwe += $"[{row.Number}.{place.Number}]";
                     
                 }
-               qwe += Environment.NewLine;
+                qwe += Environment.NewLine;
             }
             return qwe;
 
