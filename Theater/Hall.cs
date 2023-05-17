@@ -20,22 +20,23 @@ namespace Theater
             for (int i = 0; i < rows; i++)
             {
                 Rows.Add(new Row(places, i + 1));
-            }
-            
+            }            
         }
 
         public override string ToString()
         {
-            int[,] array = new int[Rows.Count, 3];
-            for (int i = 0; i < array.GetLength(0); i++)
+          
+            string qwe = $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}";
+            foreach (var row in Rows)
             {
-                for (int k = 0; k < array.GetLength(1); k++)
+                foreach (var place in row.Places)
                 {
-                    Console.Write($"[{i + 1}.{k + 1}]");
+                    qwe += $"[{row.Number}.{place.Number}]";
+                    
                 }
-                Console.WriteLine();
+               qwe += Environment.NewLine;
             }
-            return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}";
+            return qwe;
 
             //return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}{string.Join(Environment.NewLine, Rows.Select(x => string.Join(" ", x.Places.Select(p => $"[{x.Number}.{p.Number}]"))))}";
         }
