@@ -26,7 +26,18 @@ namespace Theater
 
         public override string ToString()
         {
-            return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}{string.Join(Environment.NewLine, Rows.Select(x => string.Join(" ", x.Places.Select(p => $"[{x.Number}.{p.Number}]"))))}";
+            int[,] array = new int[Rows.Count, 3];
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    Console.Write($"[{i + 1}.{k + 1}]");
+                }
+                Console.WriteLine();
+            }
+            return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}";
+
+            //return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}{string.Join(Environment.NewLine, Rows.Select(x => string.Join(" ", x.Places.Select(p => $"[{x.Number}.{p.Number}]"))))}";
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Theater
             var hall2 = new Hall(3, "Dvnre", 3, 5);
             Console.WriteLine(hall2);
 
+
             //var hall1 = new Hall
             //{
             //    Number = 1            
