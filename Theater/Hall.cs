@@ -25,7 +25,7 @@ namespace Theater
 
         public override string ToString()
         {
-          
+
             string qwe = $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}";
             foreach (var row in Rows)
             {
