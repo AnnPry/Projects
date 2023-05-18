@@ -10,5 +10,10 @@ namespace Theater
     {
         public string Name { get; set; }
         public Hall Hall { get; set; }
+        
+        public Performance(string name)
+        {
+            Name = name;
+        }
     }
 }

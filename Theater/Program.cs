@@ -7,9 +7,9 @@ namespace Theater
     {
         static void Main(string[] args)
         {
-            var hall1 = new Hall(4, "Jhuko", 4, 3);
+            var hall1 = new Hall(4, "Jhuko", 4, 3, 2);
             Console.WriteLine(hall1);
-            var hall2 = new Hall(3, "Dvnre", 3, 5);
+            var hall2 = new Hall(3, "Dvnre", 3, 5, 1);
             Console.WriteLine(hall2);
 
 
