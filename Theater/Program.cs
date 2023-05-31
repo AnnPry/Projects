@@ -12,6 +12,13 @@ namespace Theater
             var hall2 = new Hall(3, "Dvnre", 3, 5, 1);
             Console.WriteLine(hall2);
 
+            //string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p" };
+            //for (int i = 0; i < performances; i++)
+            //{
+            //    Random rnd = new Random();
+            //    string randomLetters = letters[rnd.Next(0, letters.Length)];
+            //    Performances.Add(new Performance(randomLetters));
+            //}
 
             //var hall1 = new Hall
             //{

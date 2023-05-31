@@ -9,7 +9,7 @@ namespace Theater
     class Place
     {
         public int Number { get; set; }
-        public Performance Performance { get; set; }
+        
         public Row Row { get; set; }
         public Price Price { get; set; }
         public Place(int number)

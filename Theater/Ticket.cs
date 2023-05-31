@@ -10,7 +10,8 @@ namespace Theater
     {
         public int Number { get; set; }              
         public Place Place { get; set; }
-       
-       
+        public decimal Price { get; set; }
+
+
     }
 }

@@ -24,13 +24,7 @@ namespace Theater
 
             
             Performances = new List<Performance>();                
-            string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p" };
-            for (int i = 0; i < performances; i++)
-            {
-                Random rnd = new Random();
-                string randomLetters = letters[rnd.Next(0, letters.Length)];
-                Performances.Add(new Performance(randomLetters));
-            }
+            
 
         }
 
@@ -46,10 +40,20 @@ namespace Theater
                     
                 }
                 qwe += Environment.NewLine;
+                foreach (var performance in Performances)
+                {
+                    
+                }
             }         
             return qwe;
 
             //return $"{Name} ({Number}), rows: {Rows.Count}, total places: {Rows.Sum(x => x.Places.Count)}{Environment.NewLine}{string.Join(Environment.NewLine, Rows.Select(x => string.Join(" ", x.Places.Select(p => $"[{x.Number}.{p.Number}]"))))}";
+        }
+        public void AddPerformance(Performance performance)
+        {
+            
+            Performances.Add(performance);
+            performance.Hall = this;
         }
     }
 }

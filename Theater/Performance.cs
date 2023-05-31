@@ -10,6 +10,7 @@ namespace Theater
     {
         public string Name { get; set; }
         public Hall Hall { get; set; }
+        public Ticket Ticket { get; set; }
         
         public Performance(string name)
         {
