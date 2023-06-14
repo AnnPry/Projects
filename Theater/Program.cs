@@ -7,9 +7,25 @@ namespace Theater
     {
         static void Main(string[] args)
         {
-            var hall1 = new Hall(4, "Jhuko", 4, 3, 2);
+            var hall1 = new Hall(4, "Jhuko", 4, 3);
+            var perf1 = new Performance("Cherry blossom");
+            
+            hall1.AddPerformance(perf1);
+            foreach (var row in hall1.Rows)
+            {
+                foreach (var place in row.Places)
+                {
+                    Random rnd = new Random();
+                    var ticket = new Ticket(0, place, rnd.Next(300, 1000));
+                    perf1.Tickets.Add(ticket);
+                    Console.WriteLine($"{ticket.Price} {ticket.Number}");
+                }
+            }
+
+            hall1.AddPerformance(new Performance("Magic book"));
             Console.WriteLine(hall1);
-            var hall2 = new Hall(3, "Dvnre", 3, 5, 1);
+            var hall2 = new Hall(3, "Dvnre", 3, 5);
+            hall2.AddPerformance(new Performance("Rainbow"));
             Console.WriteLine(hall2);
 
             //string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p" };

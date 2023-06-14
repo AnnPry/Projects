@@ -8,14 +8,12 @@ namespace Theater
 {
     class Place
     {
-        public int Number { get; set; }
-        
+        public int Number { get; set; }        
         public Row Row { get; set; }
-        public Price Price { get; set; }
-        public Place(int number)
+        public Place(int number, Row row)
         {
             Number = number;
-
+            Row = row;
         }
     }
 }

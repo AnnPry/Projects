@@ -10,11 +10,12 @@ namespace Theater
     {
         public string Name { get; set; }
         public Hall Hall { get; set; }
-        public Ticket Ticket { get; set; }
+        public List<Ticket> Tickets { get; set; }
         
         public Performance(string name)
         {
             Name = name;
+            Tickets = new List<Ticket>();
         }
     }
 }
